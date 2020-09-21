@@ -19,5 +19,15 @@ locals {
     net_addr   = replace(local.net_blocks[i], local.net_regex, "")
     new_bits   = local.net_bits[i]
   }]
+  named_networks = { for i, net in local.input_nets : net.name => {
+    cidr_block = local.net_blocks[i]
+    mask       = tonumber(replace(local.net_blocks[i], local.mask_regex, ""))
+    net_addr   = replace(local.net_blocks[i], local.net_regex, "")
+    new_bits   = local.net_bits[i]
+    } if net.name != null
+  }
+  named_cidrs = {
+    for i, net in local.input_nets : net.name => local.net_blocks[i] if net.name != null
+  }
 }
 

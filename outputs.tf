@@ -18,3 +18,13 @@ output "base_cidr_block" {
   value       = local.base_cidr_block
 }
 
+output "named_networks" {
+  description = "map for direct access with the name of the network"
+  value       = local.named_networks
+}
+
+output "named_cidrs" {
+  description = "named cidr address ranages for each network"
+  value       = local.named_cidrs
+}
+
