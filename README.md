@@ -19,7 +19,7 @@ Each network got a name and it's mask. If you want to skip the network in the na
 ```terraform
 module "net_calc" {
   source            = "github.com/cloudpilots/terraform-netblock-calculator?ref=v1.0.0"
-  base_cidr_block           = "10.0.0.0/8"
+  base_cidr_block   = "10.0.0.0/8"
   networks = [
     {
       name = null
@@ -42,13 +42,13 @@ This are example outputs generated from `terraform apply --var-file=test.tfvars`
 
 ```terraform
 base_cidr_block = 10.0.0.0/8
-base_net_addr = 10.0.0.0
-base_netmask = 8
-named_cidrs = {
+base_net_addr   = 10.0.0.0
+base_netmask    = 8
+named_cidrs     = {
   "test2" = "10.0.8.0/21"
   "test3" = "10.0.16.0/24"
 }
-named_networks = {
+named_networks  = {
   "test2" = {
     "cidr_block" = "10.0.8.0/21"
     "mask" = 21
@@ -62,7 +62,7 @@ named_networks = {
     "new_bits" = 16
   }
 }
-networks = [
+networks        = [
   {
     "cidr_block" = "10.0.0.0/24"
     "mask" = 24
