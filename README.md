@@ -11,7 +11,7 @@ This is the usecase of this module.
 
 ```terraform
 module "net_calc" {
-  source            = "github.com/cloudpilots/terraform-netblock-calculator"
+  source            = "github.com/cloudpilots/terraform-netblock-calculator?ref=v1.0.0"
   base_cidr_block           = "10.0.0.0/8"
   networks = [
     {
