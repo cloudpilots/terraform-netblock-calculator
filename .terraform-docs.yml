@@ -1,0 +1,24 @@
+# .terraform-docs.yml
+content: |-
+  {{ .Header }}
+
+  ## Example
+
+  ```hcl
+  {{ include "examples/calculation/main.tf" }}
+  ```
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Modules }}
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}  
+
+  This are example outputs generated from `terraform apply --var-file=test.tfvars`.
+
+    ```hcl
+  {{ include "examples/calculation/outputs.tf" }}
+  ```

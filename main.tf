@@ -1,3 +1,22 @@
+/**
+* # terraform netblock calculator
+* 
+* This module tries to easy the network calculation with terraform.
+* 
+* The `cidrsubnets` terraform functions allows you to calculate network ranges.
+* This function requires you to specify the bits you need for each netblock.
+* For pratical reasons it can be more useful to specify network masks instead.
+* This is the usecase of this module.
+* 
+* ## Usage
+* 
+* This module requires `base_cidr_block` (string) and `networks` (list(object)) as input.
+* `base_cidr_block` is the base network super block, which will be used for calculations.
+* `networks` is a list of objects, describing the networks to calculate.
+* Each network got a name and it's mask. If you want to skip the network in the named outputs, you can set the name to null.
+* 
+*/
+
 locals {
   mask_regex = "/.*\\//"
   net_regex  = "/\\/.*/"
